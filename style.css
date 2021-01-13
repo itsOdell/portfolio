@@ -1,0 +1,690 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;600;800&family=Titillium+Web:wght@300;400;600&display=swap');
+
+* {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'mulish';
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/*                  TRANSPARENT SIDE BAR                    */
+nav {
+    position: fixed;
+    width: 25%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul {
+    height: 35%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    font-size: 19px;
+}
+
+ul>li>a {
+    text-decoration: none;
+    padding: 3px 5px;
+    border-radius: 3px;
+    color: #0077b5;
+}
+
+@media (max-width: 768px) {
+    .introduction>h1 {
+        font-size: 35px;
+        line-height: 1;
+    }
+}
+
+ul li {
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+ul li:hover {
+    transform: translate(8px);
+    text-shadow: 0 1px 3px gray;
+}
+
+/*                      NAVBAR ANIMATIONS                       */
+.navBarClose {
+    animation-name: navBarClose;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes navBarClose {
+    0% {
+        width: 25%;
+    }
+
+    50% {
+        width: 12%;
+    }
+
+    100% {
+        width: 0;
+        left: -50px;
+        display: none;
+    }
+}
+
+#open {
+    animation-name: open;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes open {
+    0% {
+        width: 0;
+        left: -50px;
+        display: none;
+    }
+
+    50% {
+        width: 12%;
+        display: fixed;
+        left: -25px;
+    }
+
+    100% {
+        width: 25%;
+        left: 0;
+    }
+}
+
+/*                                  ANIMATION                       */
+.home {
+    opacity: 0;
+    animation-name: first;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.who {
+    opacity: 0;
+    animation-name: second;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.projects {
+    opacity: 0;
+    animation-name: third;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.skills {
+    opacity: 0;
+    animation-name: fourth;
+    animation-duration: 2.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.fixed {
+    opacity: 0;
+    cursor: pointer;
+    animation-name: fifth;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes first {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes second {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes third {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fourth {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fifth {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#close {
+    color: crimson;
+    position: absolute;
+    right: -28px;
+    top: 5px;
+    font-size: 23px;
+    opacity: 0.1;
+    transition: all 0.5s ease;
+}
+
+#close:hover {
+    transform: rotate(180deg);
+    cursor: pointer;
+    color: rgb(160, 16, 45);
+    opacity: 1;
+}
+
+/*                      MAIN DISPLAY/ HERO SECTION              */
+#home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("images/hero.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: -105px;
+}
+
+.right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    animation-name: introSlide;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+}
+
+#blink {
+    transition: all 0.3s ease;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    font-size: 60px;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.introduction {
+    font-size: 30px;
+    margin-top: 180px;
+    text-align: center;
+    padding-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.path {
+    padding: 1.5rem;
+    font-size: 23px;
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+    letter-spacing: 2px;
+}
+
+.mySocials {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 40px;
+    position: absolute;
+    width: 100%;
+    bottom: 80px;
+}
+
+.right>p {
+    text-align: center;
+    font-size: 21px;
+    margin-top: 20px;
+}
+
+.fa-github {
+    transition: all 0.3s ease;
+    color: black;
+    padding: 5px;
+}
+
+.fa-github:hover {
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+}
+
+.fa-linkedin-in {
+    transition: all 0.3s ease;
+    color: black;
+    padding: 7px 10px;
+}
+
+.fa-linkedin-in:hover {
+    color: white;
+    background-color: #0077b5;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*                      About page                      */
+#about {
+    width: 100%;
+    margin-top: 170px;
+    height: 100%;
+}
+
+.container-2 {
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    text-align: center;
+    width: 100vw;
+    font-family: 'mulish';
+    font-size: 32px;
+    padding: 5px;
+}
+
+.spaceAround {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 2rem;
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.spaceAround>div {
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    margin: 23px;
+}
+
+.spaceAround>div img {
+    width: 100%;
+    height: 100%;
+}
+
+.wBotText,
+.cBotText,
+.bBotText {
+    text-align: center;
+    margin-left: 10px;
+    line-height: 1.3;
+    word-spacing: 1px;
+}
+
+
+
+
+
+
+/*                          projects                    */
+#projects {
+    width: 100%;
+    height: 80vh;
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+
+.container-3 {
+    width: 100%;
+    height: 100%;
+    background-image: url("images/github/rock.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.visit {
+    z-index: 20;
+    background-color: gold;
+    width: 100%;
+    text-align: center;
+    padding: 13px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    animation-name: rgb;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+.visit a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+}
+
+.myProjectsText {
+    margin-bottom: 15px;
+}
+
+@keyframes rgb {
+    0% {
+        background-color: gold;
+    }
+
+    20% {
+        background-color: #2a9d8f;
+    }
+
+    40% {
+        background-color: #e63946;
+    }
+
+    60% {
+        background-color: #fca311;
+    }
+
+    80% {
+        background-color: #1d3557;
+    }
+
+    100% {
+        background-color: gold;
+    }
+}
+
+
+#right,
+#left {
+    font-size: 45px;
+    color: #0077b5;
+    cursor: pointer;
+    outline: none;
+    z-index: 20;
+}
+
+
+
+@media screen and (max-width: 940px) {
+    nav {
+        width: 25%;
+    }
+
+    .introduction>h1 {
+        font-size: 40px;
+    }
+
+    .introduction {
+        padding: 1rem;
+    }
+
+    .path>p {
+        font-size: 20px;
+    }
+
+    #blink {
+        font-size: 43px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .introduction>h1 {
+        font-size: 35px;
+        line-height: 1;
+    }
+    .introduction {
+        margin-top: 10rem;
+    }
+    #blink {
+        font-size: 40px;
+    }
+
+    .path {
+        font-size: 20px;
+        padding-top: 0;
+    }
+    nav {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav {
+        width: 35%;
+    }
+    .path,
+    .path p {
+        font-size: 20px !important;
+    }
+
+    .visit {
+        font-size: 23px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*              SKILLS              */
+#skills{
+    margin-top: 300px;
+    width: 100%;
+    height: 100%;
+}
+.container-4{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.header2{
+    margin: 30px;
+    font-size: 35px;
+}
+
+
+.languagesContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2px 5px;
+    margin-bottom: 150px;
+    flex-wrap: wrap;
+}
+.langCard{
+    margin: 0 20px 0 20px;
+}
+.html{
+    width: 150px;
+    height: 150px;
+}
+.css{
+    width: 130px;
+    height: 160px;
+}
+.js{
+    width: 150px;
+    height: 120px;
+}
+#skills > .header > h1 {
+    margin: 20px 0 40px 0;
+    font-size: 55px;
+}
+.react{
+    width: 200px;
+    height: 150px;
+}
+.jquery{
+    width: 200px;
+    height: 160px;
+}
+.header3{
+    margin-bottom: 10px;
+    font-size: 35px;
+}
+.frameWorkContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.topImgLang{
+    margin-bottom: 10px;
+}
+#langDisc{
+    line-height: 1.5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*                      Wanna hire me           */
+.wannaHire{
+    margin-top: 150px;
+    text-align: center;
+    line-height: 1.4;
+    margin-bottom: 60px;
+}
+.hireMe{
+    font-size: 35px;
+    animation-name: rgb2;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    margin-bottom: 5px;
+}
+@keyframes rgb2 {
+    0% {
+        color: gold;
+    }
+
+    20% {
+        color: #2a9d8f;
+    }
+
+    40% {
+        color: #e63946;
+    }
+
+    60% {
+        color: #fca311;
+    }
+
+    80% {
+        color: #1d3557;
+    }
+
+    100% {
+        color: gold;
+    }
+}
+.hireMeText{
+    font-size: 20px;
+}
+.secondLinkedin{
+    margin-left: 5px;
+}
